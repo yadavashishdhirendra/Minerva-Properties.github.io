@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <style>
+        .container {
+            padding: 100px 0;
+        }
+
+        .filter-head {
+            margin-top: 40px;
+        }
+
+        .data-content {
+            margin-top: 30px;
+        }
+
+        .data-content .row {
+            margin: 0;
+            justify-content: space-between;
+        }
+
+        .col {
+            flex: 0 0 24%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 8px 0;
+            display: none;
+        }
+
+        [data-from-dependent] {
+            display: none;
+        }
+
+        [data-from-dependent].display {
+            display: initial;
+        }
+
+        #RYLFIELDs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #RYLFIELDs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+
+
+        #HEROs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #HEROs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+
+        #BAJAJs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #BAJAJs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+
+        #YAMAHAs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #YAMAHAs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+
+        #TATAs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #TATAs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+
+        #MAHINDRAs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #MAHINDRAs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+
+        #ALLCARs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #ALLCARs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+
+        #ALLBIKEs>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 4rem;
+            grid-gap: 2rem;
+            max-width: fit-content;
+        }
+
+        #ALLBIKEs>div>div {
+            border: 1px solid black;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row filter-head">
+            <div class="col-6">
+                <select id="source" name="source" data-dependent-selector="#status">
+                    <option>Choose a Category</option>
+                    <option data-dependent-opt="BIKES">Bikes</option>
+                    <option data-dependent-opt="CARS">Cars</option>
+                </select>
+
+                <select id="status" name="status">
+                    <option>select</option>
+                    <option value="ALLBIKE" data-from-dependent="BIKES">All Bikes</option>
+                    <option value="RYLFIELD" data-from-dependent="BIKES">Royal Enfield</option>
+                    <option value="HERO" data-from-dependent="BIKES">Hero</option>
+                    <option value="BAJAJ" data-from-dependent="BIKES">Bajaj</option>
+                    <option value="YAMAHA" data-from-dependent="BIKES">Yamaha</option>
+                    <option value="ALLCAR" data-from-dependent="CARS">All Cars</option>
+                    <option value="TATA" data-from-dependent="CARS">Tata</option>
+                    <option value="MAHINDRA" data-from-dependent="CARS">Mahindra</option>
+                </select>
+            </div>
+
+            <div style="margin-top: 2%; margin-left: 40%;" class="row">
+                <div class="col-sm-12 text-center">
+                    <button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 100px;"
+                        onclick="btnSearch_Click()">clear all</button>
+                    <button id="btnClear" class="btn btn-danger btn-md center-block" Style="width: 100px;"
+                        onclick="answers()">search</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="RYLFIELDs" style="display: none;">
+            <div>
+                <div>Classic 350</div>
+                <div>Himalayan</div>
+                <div>Meteor 350</div>
+            </div>
+        </div>
+        <div id="HEROs" style="display: none;">
+            <div>
+                <div>Splendor Plus</div>
+                <div>HF Deluxe</div>
+                <div>Passion Pro</div>
+            </div>
+        </div>
+        <div id="BAJAJs" style="display: none;">
+            <div>
+                <div>Pulsar 150</div>
+                <div>Pulsar NS200</div>
+                <div>Pulsar 220 F</div>
+            </div>
+        </div>
+        <div id="YAMAHAs" style="display: none;">
+            <div>
+                <div>FZ-X</div>
+                <div>YZF R15 V3</div>
+                <div>YZF MT-15</div>
+            </div>
+        </div>
+        <div id="TATAs" style="display: none;">
+            <div>
+                <div>Nexon</div>
+                <div>Harrier</div>
+                <div>Altroz</div>
+            </div>
+        </div>
+        <div id="MAHINDRAs" style="display: none;">
+            <div>
+                <div>Thar</div>
+                <div>Bolero</div>
+                <div>Scorpio</div>
+            </div>
+        </div>
+        <div id="ALLCARs" style="display: none;">
+            <div>
+                <div>Nexon</div>
+                <div>Harrier</div>
+                <div>Altroz</div>
+                <div>Thar</div>
+                <div>Bolero</div>
+                <div>Scorpio</div>
+            </div>
+        </div>
+        <div id="ALLBIKEs" style="display: none;">
+            <div>
+                <div>Classic 350</div>
+                <div>Himalayan</div>
+                <div>Meteor 350</div>
+                <div>Splendor Plus</div>
+                <div>HF Deluxe</div>
+                <div>Passion Pro</div>
+                <div>Pulsar 150</div>
+                <div>Pulsar NS200</div>
+                <div>Pulsar 220 F</div>
+                <div>FZ-X</div>
+                <div>YZF R15 V3</div>
+                <div>YZF MT-15</div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script>
+        function btnSearch_Click() {
+            window.location.reload()
+        }
+
+        document.addEventListener("change", checkSelect);
+
+        function checkSelect(evt) {
+            const origin = evt.target;
+
+            if (origin.dataset.dependentSelector) {
+                const selectedOptFrom = origin.querySelector("option:checked")
+                    .dataset.dependentOpt || "n/a";
+                const addRemove = optData => (optData || "") === selectedOptFrom ?
+                    "add" : "remove";
+                document.querySelectorAll(`${origin.dataset.dependentSelector} option`)
+                    .forEach(opt =>
+                        opt.classList[addRemove(opt.dataset.fromDependent)]("display"));
+            }
+        }
+
+
+        function answers() {
+            var element = document.getElementById("status");
+            var elementValue = element.value;
+            var RYL = document.getElementById('RYLFIELDs');
+            var HER = document.getElementById('HEROs');
+            var BAJ = document.getElementById('BAJAJs');
+            var YAM = document.getElementById('YAMAHAs');
+            var TAT = document.getElementById('TATAs');
+            var MAH = document.getElementById('MAHINDRAs');
+            var ALLCar = document.getElementById('ALLCARs');
+            var ALLBike = document.getElementById('ALLBIKEs')
+
+            if (elementValue == "RYLFIELD") {
+                RYL.style.display = 'block'
+                HER.style.display = 'none'
+                BAJ.style.display = 'none'
+                YAM.style.display = 'none'
+                TAT.style.display = 'none'
+                ALLCar.style.display = 'none'
+                MAH.style.display = 'none'
+                ALLBike.style.display = 'none'
+            } else if (elementValue == "HERO") {
+                HER.style.display = 'block'
+                RYL.style.display = 'none'
+                BAJ.style.display = 'none'
+                YAM.style.display = 'none'
+                TAT.style.display = 'none'
+                ALLCar.style.display = 'none'
+                MAH.style.display = 'none'
+                ALLBike.style.display = 'none'
+            } else if (elementValue == 'BAJAJ') {
+                BAJ.style.display = 'block'
+                HER.style.display = 'none'
+                RYL.style.display = 'none'
+                YAM.style.display = 'none'
+                TAT.style.display = 'none'
+                MAH.style.display = 'none'
+                ALLCar.style.display = 'none'
+                ALLBike.style.display = 'none'
+            } else if (elementValue == 'YAMAHA') {
+                YAM.style.display = 'block'
+                BAJ.style.display = 'none'
+                HER.style.display = 'none'
+                RYL.style.display = 'none'
+                TAT.style.display = 'none'
+                MAH.style.display = 'none'
+                ALLCar.style.display = 'none'
+                ALLBike.style.display = 'none'
+            } else if (elementValue == 'TATA') {
+                TAT.style.display = 'block'
+                YAM.style.display = 'none'
+                BAJ.style.display = 'none'
+                HER.style.display = 'none'
+                RYL.style.display = 'none'
+                MAH.style.display = 'none'
+                ALLCar.style.display = 'none'
+                ALLBike.style.display = 'none'
+            } else if (elementValue == 'MAHINDRA') {
+                MAH.style.display = 'block'
+                TAT.style.display = 'none'
+                YAM.style.display = 'none'
+                BAJ.style.display = 'none'
+                HER.style.display = 'none'
+                RYL.style.display = 'none'
+                ALLCar.style.display = 'none'
+                ALLBike.style.display = 'none'
+            } else if (elementValue == 'ALLCAR') {
+                ALLCar.style.display = 'block'
+                MAH.style.display = 'none'
+                TAT.style.display = 'none'
+                YAM.style.display = 'none'
+                BAJ.style.display = 'none'
+                HER.style.display = 'none'
+                RYL.style.display = 'none'
+                ALLBike.style.display = 'none'
+            } else if (elementValue == 'ALLBIKE') {
+                ALLBike.style.display = 'block'
+                ALLCar.style.display = 'none'
+                MAH.style.display = 'none'
+                TAT.style.display = 'none'
+                YAM.style.display = 'none'
+                BAJ.style.display = 'none'
+                HER.style.display = 'none'
+                RYL.style.display = 'none'
+            } else {
+                alert("No Product Found With This Match!")
+            }
+        }
+    </script>
+</body>
+
+</html>
